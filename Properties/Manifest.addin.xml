@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionModel>
+	<Runtime>
+	</Runtime>
+
+	<Extension path="/MonoDevelop/Ide/Commands">
+		<Category id="TestManyFileWatchers" _name="File Watchers">
+		<Command
+				id="TestManyFileWatchersAddin.CreateManyFileWatchers"
+				_label = "Create File Watchers"
+				defaultHandler="TestManyFileWatchersAddin.AddFileWatchersHandler" />
+		<Command
+				id="TestManyFileWatchersAddin.DisposeFileWatchers"
+				_label = "Dispose File Watchers"
+				defaultHandler="TestManyFileWatchersAddin.DisposeFileWatchersHandler" />
+	</Category>
+	</Extension>
+
+	<Extension path="/MonoDevelop/Ide/MainMenu/Tools">
+		<SeparatorItem id = "CustomToolsSection" _label = "Custom"/>
+		<CommandItem id = "MonoDevelop.Ide.Commands.ToolCommands.ToolList" />
+		<CommandItem id = "MonoDevelop.Ide.Commands.ToolCommands.EditCustomTools" />
+		<SeparatorItem id = "OptionsSection" />
+
+		<SeparatorItem
+			id="TestManyFileWatchersSection"
+			insertafter="MonoDevelop.Ide.Commands.ToolCommands.EditCustomTools"
+			insertbefore="OptionsSection"
+			_label="File Watchers" />
+		<CommandItem
+			id="TestManyFileWatchersAddin.CreateManyFileWatchers"
+			insertafter="TestManyFileWatchersSection"
+			insertbefore="OptionsSection" />
+		<CommandItem
+			id="TestManyFileWatchersAddin.DisposeFileWatchers"
+			insertafter="TestManyFileWatchersSection"
+			insertbefore="OptionsSection" />
+	</Extension>
+</ExtensionModel>
